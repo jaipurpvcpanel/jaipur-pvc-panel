@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://jaipur-pvc-panel.com/sitemap.xml
+Sitemap: https://jaipurpvcpanel.com/sitemap.xml
