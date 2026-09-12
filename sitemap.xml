@@ -18,14 +18,7 @@
   <url>
     <loc>https://jaipurpvcpanel.com/gallery.html</loc>
   </url>
-  <!-- BLOG PAGE -->
   <url>
-    <loc>https://jaipurpvcpanel.com/blog.html</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-    <url>
     <loc>https://jaipurpvcpanel.com/pvc-panel-in-vaishali-nagar.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -257,6 +250,20 @@
   </url>
   <url>
     <loc>https://jaipurpvcpanel.com/pvc-panel-in-kartarpura.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+ <!-- BLOG PAGE -->
+  <url>
+    <loc>https://jaipurpvcpanel.com/blog.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- BLOG ARTICLE 1 -->
+  <url>
+    <loc>https://jaipurpvcpanel.com/seelan-treatment-in-jaipur.html</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
