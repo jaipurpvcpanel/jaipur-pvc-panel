@@ -50,6 +50,50 @@
 
     <main class="flex-grow">
       
+      <!-- 🚀 AUTO DYNAMIC BREADCRUMB (UI + SCHEMA) -->
+      <div id="seo-breadcrumb"></div>
+      <script>
+        setTimeout(() => {
+          let path = window.location.pathname;
+          let pageName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+          
+          // Agar home page nahi hai, tabhi breadcrumb dikhao
+          if(pageName && pageName !== 'index' && pageName !== '') {
+            
+            // Text format karna (e.g., "pvc panel in sodala" -> "PVC Panel In Sodala")
+            pageName = pageName.replace(/\b\w/g, c => c.toUpperCase()).replace('Pvc', 'PVC');
+            
+            // 1. UI Add Karna (Breadcrumb Design)
+            document.getElementById('seo-breadcrumb').innerHTML = `
+              <nav class="bg-stone-100/50 py-2.5 px-4 border-b border-stone-200">
+                <div class="max-w-7xl mx-auto flex items-center gap-2 text-[10px] sm:text-xs font-bold text-stone-500 uppercase tracking-wider">
+                  <a href="/" class="hover:text-brand transition-colors flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg> 
+                    Home
+                  </a>
+                  <span class="text-stone-400">/</span>
+                  <span class="text-stone-800">${pageName}</span>
+                </div>
+              </nav>
+            `;
+            
+            // 2. Google JSON-LD Schema Add Karna (For SEO)
+            let schema = {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.jaipurpvcpanel.com/" },
+                { "@type": "ListItem", "position": 2, "name": pageName, "item": "https://www.jaipurpvcpanel.com" + path }
+              ]
+            };
+            let scriptTag = document.createElement('script');
+            scriptTag.type = 'application/ld+json';
+            scriptTag.text = JSON.stringify(schema);
+            document.head.appendChild(scriptTag);
+          }
+        }, 100);
+      </script>
+      
       <!-- Blog Hero Section -->
       <section class="bg-stone-950 py-16 px-4 text-center">
         <div class="max-w-3xl mx-auto space-y-4">
